@@ -1,0 +1,15 @@
+services:
+  app:
+    image: node-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: Node_Docker
+    ports:
+      - "443:443"
+    networks:
+      - app-web-network
+
+networks:
+  app-web-network:
+    driver: bridge
